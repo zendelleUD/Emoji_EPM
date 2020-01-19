@@ -1,0 +1,6 @@
+framework module Pods_Zappos_EmojiPerMinute {
+  umbrella header "Pods-Zappos_EmojiPerMinute-umbrella.h"
+
+  export *
+  module * { export * }
+}

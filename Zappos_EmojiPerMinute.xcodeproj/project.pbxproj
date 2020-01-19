@@ -1,0 +1,454 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		52068C4923D23DC300310C8E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52068C4823D23DC300310C8E /* AppDelegate.swift */; };
+		52068C4B23D23DC300310C8E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52068C4A23D23DC300310C8E /* SceneDelegate.swift */; };
+		52068C4D23D23DC300310C8E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52068C4C23D23DC300310C8E /* ViewController.swift */; };
+		52068C5023D23DC300310C8E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52068C4E23D23DC300310C8E /* Main.storyboard */; };
+		52068C5223D23DC400310C8E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52068C5123D23DC400310C8E /* Assets.xcassets */; };
+		52068C5523D23DC400310C8E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52068C5323D23DC400310C8E /* LaunchScreen.storyboard */; };
+		52068C5F23D2483300310C8E /* EmojiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52068C5E23D2483300310C8E /* EmojiRequest.swift */; };
+		52C8C39A23D3F1500001CD9A /* EmojiDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C8C39923D3F1500001CD9A /* EmojiDataModel.swift */; };
+		6ACBFAFB0E9314CDC90839A6 /* Pods_Zappos_EmojiPerMinute.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 478DBB6F9EE505407D11513D /* Pods_Zappos_EmojiPerMinute.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		478DBB6F9EE505407D11513D /* Pods_Zappos_EmojiPerMinute.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Zappos_EmojiPerMinute.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		52068C4523D23DC300310C8E /* Zappos_EmojiPerMinute.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Zappos_EmojiPerMinute.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		52068C4823D23DC300310C8E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		52068C4A23D23DC300310C8E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		52068C4C23D23DC300310C8E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		52068C4F23D23DC300310C8E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		52068C5123D23DC400310C8E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		52068C5423D23DC400310C8E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		52068C5623D23DC400310C8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		52068C5E23D2483300310C8E /* EmojiRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiRequest.swift; sourceTree = "<group>"; };
+		52C8C39923D3F1500001CD9A /* EmojiDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiDataModel.swift; sourceTree = "<group>"; };
+		838F69973ABBC0DFB3128844 /* Pods-Zappos_EmojiPerMinute.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zappos_EmojiPerMinute.release.xcconfig"; path = "Pods/Target Support Files/Pods-Zappos_EmojiPerMinute/Pods-Zappos_EmojiPerMinute.release.xcconfig"; sourceTree = "<group>"; };
+		F673E879D238ED9CF7073E8B /* Pods-Zappos_EmojiPerMinute.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zappos_EmojiPerMinute.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Zappos_EmojiPerMinute/Pods-Zappos_EmojiPerMinute.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		52068C4223D23DC300310C8E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6ACBFAFB0E9314CDC90839A6 /* Pods_Zappos_EmojiPerMinute.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3BB734510CC675DC2FAD9812 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				478DBB6F9EE505407D11513D /* Pods_Zappos_EmojiPerMinute.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		52068C3C23D23DC300310C8E = {
+			isa = PBXGroup;
+			children = (
+				52068C4723D23DC300310C8E /* Zappos_EmojiPerMinute */,
+				52068C4623D23DC300310C8E /* Products */,
+				F0A1C97F47E7C3E7927F90E8 /* Pods */,
+				3BB734510CC675DC2FAD9812 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		52068C4623D23DC300310C8E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				52068C4523D23DC300310C8E /* Zappos_EmojiPerMinute.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		52068C4723D23DC300310C8E /* Zappos_EmojiPerMinute */ = {
+			isa = PBXGroup;
+			children = (
+				52193B8B23D374A8009A21B6 /* Model */,
+				52193B8A23D37474009A21B6 /* Controller */,
+				52193B8923D3746B009A21B6 /* View */,
+				52068C5123D23DC400310C8E /* Assets.xcassets */,
+				52068C5623D23DC400310C8E /* Info.plist */,
+			);
+			path = Zappos_EmojiPerMinute;
+			sourceTree = "<group>";
+		};
+		52193B8923D3746B009A21B6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				52068C5323D23DC400310C8E /* LaunchScreen.storyboard */,
+				52068C4E23D23DC300310C8E /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		52193B8A23D37474009A21B6 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				52068C4C23D23DC300310C8E /* ViewController.swift */,
+				52068C5E23D2483300310C8E /* EmojiRequest.swift */,
+				52068C4A23D23DC300310C8E /* SceneDelegate.swift */,
+				52068C4823D23DC300310C8E /* AppDelegate.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		52193B8B23D374A8009A21B6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				52C8C39923D3F1500001CD9A /* EmojiDataModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F0A1C97F47E7C3E7927F90E8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F673E879D238ED9CF7073E8B /* Pods-Zappos_EmojiPerMinute.debug.xcconfig */,
+				838F69973ABBC0DFB3128844 /* Pods-Zappos_EmojiPerMinute.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		52068C4423D23DC300310C8E /* Zappos_EmojiPerMinute */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 52068C5923D23DC400310C8E /* Build configuration list for PBXNativeTarget "Zappos_EmojiPerMinute" */;
+			buildPhases = (
+				0935F27062FC6DDD8E7B046E /* [CP] Check Pods Manifest.lock */,
+				52068C4123D23DC300310C8E /* Sources */,
+				52068C4223D23DC300310C8E /* Frameworks */,
+				52068C4323D23DC300310C8E /* Resources */,
+				165996070782360E06A74A2B /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Zappos_EmojiPerMinute;
+			productName = Zappos_EmojiPerMinute;
+			productReference = 52068C4523D23DC300310C8E /* Zappos_EmojiPerMinute.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		52068C3D23D23DC300310C8E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1120;
+				LastUpgradeCheck = 1120;
+				ORGANIZATIONNAME = Zendelle_Badiang;
+				TargetAttributes = {
+					52068C4423D23DC300310C8E = {
+						CreatedOnToolsVersion = 11.2.1;
+					};
+				};
+			};
+			buildConfigurationList = 52068C4023D23DC300310C8E /* Build configuration list for PBXProject "Zappos_EmojiPerMinute" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 52068C3C23D23DC300310C8E;
+			productRefGroup = 52068C4623D23DC300310C8E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				52068C4423D23DC300310C8E /* Zappos_EmojiPerMinute */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		52068C4323D23DC300310C8E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				52068C5523D23DC400310C8E /* LaunchScreen.storyboard in Resources */,
+				52068C5223D23DC400310C8E /* Assets.xcassets in Resources */,
+				52068C5023D23DC300310C8E /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0935F27062FC6DDD8E7B046E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Zappos_EmojiPerMinute-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		165996070782360E06A74A2B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Zappos_EmojiPerMinute/Pods-Zappos_EmojiPerMinute-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Zappos_EmojiPerMinute/Pods-Zappos_EmojiPerMinute-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		52068C4123D23DC300310C8E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				52068C4D23D23DC300310C8E /* ViewController.swift in Sources */,
+				52068C5F23D2483300310C8E /* EmojiRequest.swift in Sources */,
+				52068C4923D23DC300310C8E /* AppDelegate.swift in Sources */,
+				52C8C39A23D3F1500001CD9A /* EmojiDataModel.swift in Sources */,
+				52068C4B23D23DC300310C8E /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		52068C4E23D23DC300310C8E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				52068C4F23D23DC300310C8E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		52068C5323D23DC400310C8E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				52068C5423D23DC400310C8E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		52068C5723D23DC400310C8E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		52068C5823D23DC400310C8E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		52068C5A23D23DC400310C8E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F673E879D238ED9CF7073E8B /* Pods-Zappos_EmojiPerMinute.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = Zappos_EmojiPerMinute/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ZendelleJohn.Zappos-EmojiPerMinute";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		52068C5B23D23DC400310C8E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 838F69973ABBC0DFB3128844 /* Pods-Zappos_EmojiPerMinute.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = Zappos_EmojiPerMinute/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ZendelleJohn.Zappos-EmojiPerMinute";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		52068C4023D23DC300310C8E /* Build configuration list for PBXProject "Zappos_EmojiPerMinute" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				52068C5723D23DC400310C8E /* Debug */,
+				52068C5823D23DC400310C8E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		52068C5923D23DC400310C8E /* Build configuration list for PBXNativeTarget "Zappos_EmojiPerMinute" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				52068C5A23D23DC400310C8E /* Debug */,
+				52068C5B23D23DC400310C8E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 52068C3D23D23DC300310C8E /* Project object */;
+}
