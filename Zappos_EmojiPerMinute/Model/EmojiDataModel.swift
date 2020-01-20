@@ -8,9 +8,13 @@
 
 import UIKit
 
-struct EmojiDataModel{
+class EmojiDataModel{
     
     //Variables
-    var Emojis: [String] = []
+    var emojis: [String] = []
     
+    
+    func setEmojis(arr:[String]){
+        emojis = arr
+    }
 }

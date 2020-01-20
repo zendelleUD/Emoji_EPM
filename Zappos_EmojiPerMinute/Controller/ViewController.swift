@@ -15,24 +15,32 @@ class ViewController: UIViewController {
     //Constants
     var count = 10
     var ResourceURL = "https://emojigenerator.herokuapp.com/emojis/api/v1?count="
+    var emojiDataModel = EmojiDataModel()
+    
     
     @IBOutlet weak var UserInput:UITextField!
     @IBOutlet weak var Emoji_Display: UILabel!
     
-    var EMOJIS: [String] = []
-    var Emoji_String: String = ""
+    
+    var Emoji_String = ""
+    var charEmojis = Set<String>()
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        UserInput.isEnabled = false
+        
+        
         // Do any additional setup after loading the view.
         
-        getEmojis(url: ResourceURL, count: count)
-        for element in EMOJIS{
-            Emoji_String += element
-        }
-        Emoji_Display.text = Emoji_String
-        print(Emoji_String)
+        /* Asychronous!! Runs in the background so makesure to time your functions with
+         ex. Enable text box to appear all all functions regarding logic once the api request responds succesfully*/
+        getNewEmojis(url: ResourceURL, count: count)
         
+
+
         
     }
 
@@ -40,48 +48,68 @@ class ViewController: UIViewController {
     //MARK: - Networking
     /***********************************/
 
-    func getEmojis(url: String,count: Int){
+    func getNewEmojis(url: String,count: Int){
         
         var resource = url
+        var tempJSON: JSON = ""
+        
+        
         resource.append("\(count)") //Takes the URL and Appends Count to make one string
         Alamofire.request(resource, method: .get).responseJSON {
             response in
-            if response.result.isSuccess{//response recieved
+            if response.result.isSuccess{   //response recieved
                 
                 // Takes the response that comes as an optional, force unwrap with "!"
                 // Cast response.result.value! as a JSON
                 let EmojiJSON : JSON = JSON(response.result.value!)
                 
-                self.updateEmoji_Array(json: EmojiJSON)
-//                print(EmojiJSON["emojis"])
-//                for element in self.EMOJIS{
-//                    print(element)
-//                }
+                self.UserInput.isEnabled = true
+                tempJSON = EmojiJSON
+                
+                //Updates EMOJI array with new set of emojis.
+                self.updateEmoji_Array(json: tempJSON)
                 
             }else { //no response
                 print("Error\(String(describing: response.result.error))")
                 
             }
         }
-        
     }
+    
     
     //MARK: - JSON Parsing
     /*************************************************/
     func updateEmoji_Array(json: JSON){
-        
-        //Turns JSON[emojis] into strings and adds to an array
-        if let emojiResult = json["emojis"].rawString(){
-            EMOJIS.append(emojiResult)
+        var tempArr = [String]()
+        /*
+        Gets Emoijis value and converts to an array,
+        Then adds array elements to EMOJIS [String] var
+        */
+        for i in json["emojis"].arrayValue{
+            tempArr.append(i.stringValue)
         }
+        
+        emojiDataModel.setEmojis(arr: tempArr)
+        
+        for i in json["emojis"].arrayValue{
+            charEmojis.insert(i.stringValue)
+        }
+        
+        print(emojiDataModel.emojis)
+        Emoji_Display.text = "\(emojiDataModel.emojis)"
+        Emoji_Display.sizeToFit()
+
     }
     
     
-    
+    //MARK: - IBAction User Input
     @IBAction func InputEdited(_ sender: UITextField) {
         
-        print("called")
+        
         
     }
+    
+    
+    
 }
 

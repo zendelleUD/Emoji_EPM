@@ -15,19 +15,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="t5S-fy-dW9">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t5S-fy-dW9">
                                 <rect key="frame" x="87" y="292" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Emojis" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w8z-9Z-YVe">
-                                        <rect key="frame" x="95" y="54" width="50" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Emojis" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="6" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w8z-9Z-YVe">
+                                        <rect key="frame" x="25" y="54" width="195" height="20.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="195" id="XaZ-AL-PDk"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="w8z-9Z-YVe" secondAttribute="trailing" constant="20" symbolic="YES" id="EtR-S4-UTs"/>
+                                    <constraint firstItem="w8z-9Z-YVe" firstAttribute="leading" secondItem="t5S-fy-dW9" secondAttribute="leading" constant="25" id="fWZ-Wh-wau"/>
+                                    <constraint firstItem="w8z-9Z-YVe" firstAttribute="centerY" secondItem="t5S-fy-dW9" secondAttribute="centerY" id="qnM-RV-tT1"/>
+                                </constraints>
                             </view>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="test" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" id="tBs-r2-tu3">
                                 <rect key="frame" x="177" y="428" width="61" height="15.5"/>
@@ -40,6 +46,12 @@
                             </textField>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBrownColor" red="0.63529411759999999" green="0.51764705879999995" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="t5S-fy-dW9" secondAttribute="trailing" constant="87" id="KwG-an-LcR"/>
+                            <constraint firstItem="t5S-fy-dW9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="87" id="LQT-oj-5Wy"/>
+                            <constraint firstItem="t5S-fy-dW9" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="248" id="MSN-Za-TSo"/>
+                            <constraint firstItem="tBs-r2-tu3" firstAttribute="top" secondItem="t5S-fy-dW9" secondAttribute="bottom" constant="8" id="eWT-QQ-Jnq"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
