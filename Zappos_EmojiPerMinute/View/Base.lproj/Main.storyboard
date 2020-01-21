@@ -35,15 +35,22 @@
                                     <constraint firstItem="w8z-9Z-YVe" firstAttribute="centerY" secondItem="t5S-fy-dW9" secondAttribute="centerY" id="qnM-RV-tT1"/>
                                 </constraints>
                             </view>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="test" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" id="tBs-r2-tu3">
-                                <rect key="frame" x="177" y="428" width="61" height="15.5"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="fill" borderStyle="roundedRect" placeholder="Type here" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" id="tBs-r2-tu3">
+                                <rect key="frame" x="177" y="428" width="61" height="16"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
-                                    <action selector="InputEdited:" destination="BYZ-38-t0r" eventType="editingDidBegin" id="57M-69-xd0"/>
+                                    <action selector="InputEdited:" destination="BYZ-38-t0r" eventType="editingChanged" id="3SV-uH-Vok"/>
                                 </connections>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FM7-uy-Ku7">
+                                <rect key="frame" x="186" y="111" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBrownColor" red="0.63529411759999999" green="0.51764705879999995" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -57,6 +64,7 @@
                     <connections>
                         <outlet property="Emoji_Display" destination="w8z-9Z-YVe" id="GAE-rG-MBj"/>
                         <outlet property="UserInput" destination="tBs-r2-tu3" id="cWl-be-t1H"/>
+                        <outlet property="WordPerMinuteLabel" destination="FM7-uy-Ku7" id="Noh-fH-qA1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
