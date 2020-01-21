@@ -28,7 +28,7 @@ class ViewController: UIViewController {
     
     //Variables
     var Emoji_String = ""
-    var charEmojis = Set<String>()
+    var charEmojis = Set<Character>()
     var score: Int = 0
     var totalKeyStrokes: Int = 0
     
@@ -98,6 +98,12 @@ class ViewController: UIViewController {
             Emoji_String += i.stringValue
         }
         
+        for char in Emoji_String{
+            charEmojis.insert(char)
+        }
+        
+        print(charEmojis)
+        
         emojiDataModel.setEmojis(arr: tempArr)
         
         print(emojiDataModel.emojis)
@@ -117,29 +123,47 @@ class ViewController: UIViewController {
      @return void
      */
     
-        @IBAction func InputEdited(_ sender: UITextField) {
+    
+    
+    //TODO: Fix detection for correct user input
+    //TODO: Do no recheck the same string that was already checked
+    //Idea: Can remove any emojis that are input into UITextField
+    @IBAction func InputEdited(_ sender: UITextField) {
         
+        //MARK: Timer
         if timer == nil{
             timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(onTimerFires), userInfo: nil, repeats: true)
         }
         
-        if Emoji_String.hasPrefix(sender.text!){
-            score += 1
+        //MARK: CorrectKeyLogic
+        /*
+         Iterates through each character in UserInput.text
+         to check if charEmojis contains any element.
+         If so adds score and removes element within charEmohis set to avoid
+         double scoring.
+         */
+        if UserInput.text != nil{
+            for char in UserInput.text! {
+                if charEmojis.contains(char){
+                    score += 1
+                    charEmojis.remove(char)
+                    print("CharEmojisSet: \(charEmojis)")
+                }
+            }
         }
-        else{
-            score -= 1
-        }
-        totalKeyStrokes += 1
-        print(score)
-        print(totalKeyStrokes)
-        emojiPerMinute(totalKeyStrokes: totalKeyStrokes, correctKeys: totalKeyStrokes-1)
         
+        totalKeyStrokes += 1
+
+    
+    
+        emojiPerMinute(totalKeyStrokes: totalKeyStrokes, correctKeys: score)
+    
     }
+    
     
     @objc func onTimerFires()
     {
         seconds += 1
-        print(seconds)
     }
     
     
@@ -149,7 +173,8 @@ class ViewController: UIViewController {
      */
     func emojiPerMinute(totalKeyStrokes: Int, correctKeys: Int){
         
-        let epm = Double(totalKeyStrokes) / Double((seconds / 60)) * Double(correctKeys)
+        let epm = Double(totalKeyStrokes) / Double((seconds
+            * 60)) * Double(correctKeys)
         let remainder = epm.truncatingRemainder(dividingBy: 1)
         if remainder >= 0.5{
             WordPerMinuteLabel.text =  "\(epm + Double(1 - remainder))) EMP"
@@ -157,7 +182,6 @@ class ViewController: UIViewController {
         else{
             WordPerMinuteLabel.text =  "\(epm) EPM"
         }
-        
     }
     
     
