@@ -16,6 +16,10 @@ class ViewController: UIViewController {
     var count = 10
     var ResourceURL = "https://emojigenerator.herokuapp.com/emojis/api/v1?count="
     var emojiDataModel = EmojiDataModel()
+   
+    //Timer
+    var timer:Timer?
+    var seconds = 1
     
     
     @IBOutlet weak var UserInput:UITextField!
@@ -112,11 +116,12 @@ class ViewController: UIViewController {
      Starts timer if not already started
      @return void
      */
-    @IBAction func InputEdited(_ sender: UITextField) {
+    
+        @IBAction func InputEdited(_ sender: UITextField) {
         
-        /*
-         sudo code: checks if a timer exists, instances one if not
-         */
+        if timer == nil{
+            timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(onTimerFires), userInfo: nil, repeats: true)
+        }
         
         if Emoji_String.hasPrefix(sender.text!){
             score += 1
@@ -131,6 +136,12 @@ class ViewController: UIViewController {
         
     }
     
+    @objc func onTimerFires()
+    {
+        seconds += 1
+        print(seconds)
+    }
+    
     
     //MARK: - Emoji Per Minute Calculator
     /**
@@ -138,7 +149,7 @@ class ViewController: UIViewController {
      */
     func emojiPerMinute(totalKeyStrokes: Int, correctKeys: Int){
         
-        let epm = Double(totalKeyStrokes / 1 * correctKeys)
+        let epm = Double(totalKeyStrokes) / Double((seconds / 60)) * Double(correctKeys)
         let remainder = epm.truncatingRemainder(dividingBy: 1)
         if remainder >= 0.5{
             WordPerMinuteLabel.text =  "\(epm + Double(1 - remainder))) EMP"
