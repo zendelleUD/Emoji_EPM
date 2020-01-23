@@ -12,6 +12,8 @@ import SwiftyJSON
 
 class ViewController: UIViewController {
 
+    
+    
     //Constants
     var count = 10
     var ResourceURL = "https://emojigenerator.herokuapp.com/emojis/api/v1?count="
@@ -20,11 +22,13 @@ class ViewController: UIViewController {
     //Timer
     var timer:Timer?
     var seconds = 1
+    var timeLeft = 5
     
     
     @IBOutlet weak var UserInput:UITextField!
     @IBOutlet weak var Emoji_Display: UILabel!
     @IBOutlet weak var WordPerMinuteLabel: UILabel!
+    @IBOutlet weak var TimeLabel: UILabel!
     
     //Variables
     var Emoji_String = ""
@@ -52,6 +56,19 @@ class ViewController: UIViewController {
         
     }
 
+    
+    
+    //MARK: - Segue
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "gotoThirdScreen"{
+            
+            let destinationViewController = segue.destination as! ThirdViewController
+            
+            destinationViewController.currentWPM = TimeLabel.text
+        }
+    }
+    
+    
     
     //MARK: - Networking
     /***********************************/
@@ -135,6 +152,7 @@ class ViewController: UIViewController {
             timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(onTimerFires), userInfo: nil, repeats: true)
         }
         
+        
         //MARK: CorrectKeyLogic
         /*
          Iterates through each character in UserInput.text
@@ -164,6 +182,15 @@ class ViewController: UIViewController {
     @objc func onTimerFires()
     {
         seconds += 1
+        timeLeft -= 1
+        TimeLabel.text = "Time: \(timeLeft) secs"
+        /*Checks if timeleft is 0 or if the charlist is empty to then
+         perform the segue*/
+        if timeLeft <= 0 || charEmojis.isEmpty == true{
+            timer?.invalidate()
+            timer = nil
+            performSegue(withIdentifier: "gotoThirdScreen", sender: self)
+        }
     }
     
     
@@ -174,7 +201,7 @@ class ViewController: UIViewController {
     func emojiPerMinute(totalKeyStrokes: Int, correctKeys: Int){
         
         let epm = Double(totalKeyStrokes) / Double((seconds
-            * 60)) * Double(correctKeys)
+            * 60)) * (Double(correctKeys) / Double(totalKeyStrokes))
         let remainder = epm.truncatingRemainder(dividingBy: 1)
         if remainder >= 0.5{
             WordPerMinuteLabel.text =  "\(epm + Double(1 - remainder))) EMP"
@@ -182,6 +209,7 @@ class ViewController: UIViewController {
         else{
             WordPerMinuteLabel.text =  "\(epm) EPM"
         }
+        
     }
     
     
