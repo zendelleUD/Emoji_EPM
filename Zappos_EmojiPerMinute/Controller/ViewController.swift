@@ -24,17 +24,20 @@ class ViewController: UIViewController {
     var seconds = 1
     var timeLeft = 5
     
-    
+    //Outlets
     @IBOutlet weak var UserInput:UITextField!
     @IBOutlet weak var Emoji_Display: UILabel!
     @IBOutlet weak var WordPerMinuteLabel: UILabel!
     @IBOutlet weak var TimeLabel: UILabel!
+    @IBOutlet weak var EPMfunc: UIButton!
     
+
     //Variables
     var Emoji_String = ""
     var charEmojis = Set<Character>()
     var score: Int = 0
     var totalKeyStrokes: Int = 0
+    var epmCorrect: Bool = true
     
     
     
@@ -64,7 +67,7 @@ class ViewController: UIViewController {
             
             let destinationViewController = segue.destination as! ThirdViewController
             
-            destinationViewController.currentWPM = TimeLabel.text
+            destinationViewController.currentWPM = WordPerMinuteLabel.text
         }
     }
     
@@ -102,6 +105,7 @@ class ViewController: UIViewController {
     }
     
     
+    
     //MARK: - JSON Parsing
     /*************************************************/
     func updateEmoji_Array(json: JSON){
@@ -130,6 +134,16 @@ class ViewController: UIViewController {
     }
     
     
+    
+    
+    @IBAction func changeEPM(_ sender: UIButton) {
+        
+        epmCorrect = false
+        
+        
+    }
+    
+
     //MARK: - IBAction User Input
     /**
             Everytime UITextField is changed, checks if Emoji_String has substring Sender.Text
@@ -173,8 +187,15 @@ class ViewController: UIViewController {
         totalKeyStrokes += 1
 
     
-    
-        emojiPerMinute(totalKeyStrokes: totalKeyStrokes, correctKeys: score)
+        //Checks
+        if epmCorrect {
+            emojiPerMinute(totalKeyStrokes: totalKeyStrokes, correctKeys: score)
+        }
+        else{
+            emojiPerMinute(totalKeyStrokes: totalKeyStrokes)
+        }
+        
+        
     
     }
     
@@ -200,11 +221,10 @@ class ViewController: UIViewController {
      */
     func emojiPerMinute(totalKeyStrokes: Int, correctKeys: Int){
         
-        let epm = Double(totalKeyStrokes) / Double((seconds
-            * 60)) * (Double(correctKeys) / Double(totalKeyStrokes))
+        let epm = Double(totalKeyStrokes) / Double(60) * (Double(correctKeys) / Double(totalKeyStrokes))
         let remainder = epm.truncatingRemainder(dividingBy: 1)
         if remainder >= 0.5{
-            WordPerMinuteLabel.text =  "\(epm + Double(1 - remainder))) EMP"
+            WordPerMinuteLabel.text =  "\(epm + Double(1 - remainder)) EMP"
         }
         else{
             WordPerMinuteLabel.text =  "\(epm) EPM"
@@ -212,6 +232,19 @@ class ViewController: UIViewController {
         
     }
     
+    //OverLoaded Method to change
+    func emojiPerMinute(totalKeyStrokes: Int){
+       let epm =
+        Double(totalKeyStrokes) / Double(seconds )
+        
+        let remainder = epm.truncatingRemainder(dividingBy: 1)
+        if remainder >= 0.5{
+            WordPerMinuteLabel.text =  "\(epm + Double(1 - remainder)) EMP"
+        }
+        else{
+            WordPerMinuteLabel.text =  "\(epm) EPM"
+        }
+    }
     
 }
 
