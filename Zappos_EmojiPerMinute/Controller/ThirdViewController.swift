@@ -8,29 +8,34 @@
 
 import UIKit
 
-class ThirdViewController: UIViewController {
-
-    var currentWPM: String?
+class ThirdViewController: UIViewController{
+   
     
+    
+    
+    //MARK: - VARIABLES
+    var currentWPM: String?
+    var delegate: CanRecieve?
+    
+    @IBOutlet weak var retryButton: UIButton!
+    @IBOutlet weak var EPMLabel: UILabel!
+    
+    @IBOutlet weak var CloseButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         
-        
+        EPMLabel.text = currentWPM
     }
     
     
+    @IBAction func closeButtonPressed(_ sender: Any) {
+        exit(-1)
+    }
+    
     
 
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

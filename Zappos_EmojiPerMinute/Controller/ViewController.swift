@@ -10,13 +10,13 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 
-class ViewController: UIViewController {
 
-    
+class ViewController: UIViewController{
+
     
     //Constants
     var count = 10
-    var ResourceURL = "https://emojigenerator.herokuapp.com/emojis/api/v1?count="
+    let RESOURCEURL = "https://emojigenerator.herokuapp.com/emojis/api/v1?count="
     var emojiDataModel = EmojiDataModel()
    
     //Timer
@@ -27,11 +27,10 @@ class ViewController: UIViewController {
     //Outlets
     @IBOutlet weak var UserInput:UITextField!
     @IBOutlet weak var Emoji_Display: UILabel!
-    @IBOutlet weak var WordPerMinuteLabel: UILabel!
     @IBOutlet weak var TimeLabel: UILabel!
     @IBOutlet weak var EPMfunc: UIButton!
+    @IBOutlet weak var emojiPerMinuteLabel: UILabel!
     
-
     //Variables
     var Emoji_String = ""
     var charEmojis = Set<Character>()
@@ -39,23 +38,17 @@ class ViewController: UIViewController {
     var totalKeyStrokes: Int = 0
     var epmCorrect: Bool = true
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         //UITextField
         UserInput.sizeToFit()
-        
-        WordPerMinuteLabel.sizeToFit()
-        
+        emojiPerMinuteLabel.sizeToFit()
         
         
         /* Asychronous!! Runs in the background so makesure to time your functions with
          ex. Enable text box to appear all all functions regarding logic once the api request responds succesfully*/
-        getNewEmojis(url: ResourceURL, count: count)
-        
-        
+        getNewEmojis(url: RESOURCEURL, count: count)
         
     }
 
@@ -67,7 +60,7 @@ class ViewController: UIViewController {
             
             let destinationViewController = segue.destination as! ThirdViewController
             
-            destinationViewController.currentWPM = WordPerMinuteLabel.text
+            destinationViewController.currentWPM = emojiPerMinuteLabel.text
         }
     }
     
@@ -135,12 +128,9 @@ class ViewController: UIViewController {
     
     
     
-    
+    //MARK: - Change EPM button
     @IBAction func changeEPM(_ sender: UIButton) {
-        
         epmCorrect = false
-        
-        
     }
     
 
@@ -185,9 +175,8 @@ class ViewController: UIViewController {
         }
         
         totalKeyStrokes += 1
-
     
-        //Checks
+        //Checks for which function to use
         if epmCorrect {
             emojiPerMinute(totalKeyStrokes: totalKeyStrokes, correctKeys: score)
         }
@@ -224,10 +213,10 @@ class ViewController: UIViewController {
         let epm = Double(totalKeyStrokes) / Double(60) * (Double(correctKeys) / Double(totalKeyStrokes))
         let remainder = epm.truncatingRemainder(dividingBy: 1)
         if remainder >= 0.5{
-            WordPerMinuteLabel.text =  "\(epm + Double(1 - remainder)) EMP"
+            emojiPerMinuteLabel.text =  "\(epm + Double(1 - remainder)) EMP"
         }
         else{
-            WordPerMinuteLabel.text =  "\(epm) EPM"
+            emojiPerMinuteLabel.text =  "\(epm) EPM"
         }
         
     }
@@ -239,10 +228,10 @@ class ViewController: UIViewController {
         
         let remainder = epm.truncatingRemainder(dividingBy: 1)
         if remainder >= 0.5{
-            WordPerMinuteLabel.text =  "\(epm + Double(1 - remainder)) EMP"
+            emojiPerMinuteLabel.text =  "\(epm + Double(1 - remainder)) EMP"
         }
         else{
-            WordPerMinuteLabel.text =  "\(epm) EPM"
+            emojiPerMinuteLabel.text =  "\(epm) EPM"
         }
     }
     

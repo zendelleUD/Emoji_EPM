@@ -20,7 +20,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Play"/>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="MOg-21-Aia"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="firstToSecond" id="MOg-21-Aia"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lnm-Le-32P">
@@ -32,10 +32,10 @@
                                 <rect key="frame" x="87" y="195" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8vn-Le-2cx">
-                                        <rect key="frame" x="103" y="53" width="34" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Emoji Per Minute" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8vn-Le-2cx">
+                                        <rect key="frame" x="63" y="0.0" width="114" height="128"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="31"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -49,7 +49,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Ia-bW-Cpe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-686" y="133"/>
+            <point key="canvasLocation" x="-686.95652173913049" y="132.58928571428572"/>
         </scene>
         <!--SecondViewController-->
         <scene sceneID="tne-QT-ifu">
@@ -150,7 +150,7 @@
                         <outlet property="Emoji_Display" destination="w8z-9Z-YVe" id="GAE-rG-MBj"/>
                         <outlet property="TimeLabel" destination="XkY-vM-XVU" id="0Ch-dg-6BO"/>
                         <outlet property="UserInput" destination="tBs-r2-tu3" id="cWl-be-t1H"/>
-                        <outlet property="WordPerMinuteLabel" destination="FM7-uy-Ku7" id="Noh-fH-qA1"/>
+                        <outlet property="emojiPerMinuteLabel" destination="FM7-uy-Ku7" id="AOt-QR-7j9"/>
                         <segue destination="h8D-w2-6pN" kind="show" identifier="gotoThirdScreen" id="os8-wp-U8M"/>
                     </connections>
                 </viewController>
@@ -166,19 +166,39 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Best Emoji per Minute(EPM):" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9zL-B8-TVs">
-                                <rect key="frame" x="98" y="174" width="219" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text=" Emoji per Minute(EPM):" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9zL-B8-TVs">
+                                <rect key="frame" x="116" y="174" width="184" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XpP-t0-Cgq">
-                                <rect key="frame" x="180" y="433" width="37" height="30"/>
+                                <rect key="frame" x="190" y="433" width="37" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Retry"/>
+                                <state key="normal" title="Retry">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" identifier="" id="pRS-2E-wak"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="thirdToSecond" id="pRS-2E-wak"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0.00 EPM" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r4w-tI-6aY">
+                                <rect key="frame" x="150" y="253" width="115" height="81"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zRF-uD-hpr">
+                                <rect key="frame" x="168" y="552" width="80" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.53209859459999997" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="Close">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="closeButtonPressed:" destination="h8D-w2-6pN" eventType="touchUpInside" id="xyN-Vc-D2L"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -186,14 +206,17 @@
                         <viewLayoutGuide key="safeArea" id="kc6-Eb-lNO"/>
                     </view>
                     <navigationItem key="navigationItem" id="Ijo-Uy-wTN"/>
+                    <connections>
+                        <outlet property="CloseButton" destination="zRF-uD-hpr" id="V42-JU-q4n"/>
+                        <outlet property="EPMLabel" destination="r4w-tI-6aY" id="DmE-eH-eE4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pBF-mo-lI1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1029" y="133"/>
+            <point key="canvasLocation" x="1028.985507246377" y="132.58928571428572"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="os8-wp-U8M"/>
         <segue reference="pRS-2E-wak"/>
     </inferredMetricsTieBreakers>
 </document>
