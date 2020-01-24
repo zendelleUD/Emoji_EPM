@@ -22,7 +22,7 @@ class ViewController: UIViewController{
     //Timer
     var timer:Timer?
     var seconds = 1
-    var timeLeft = 5
+    var timeLeft = 60
     
     //Outlets
     @IBOutlet weak var UserInput:UITextField!
